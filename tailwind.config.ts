@@ -7,11 +7,22 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      Lora: [
+        "Lora",
+        "sans-serif",
+      ] /*second one is for case when 1st is not supported*/,
+      LoraIttalic: [
+        "LoraIttalic",
+        "sans-serif",
+      ] /*second one is for case when 1st is not supported*/,
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        backgroundPrimary: "var(--backgroundPrimary)",
+        backgroundSecondary: "var(--backgroundSecondary)",
+        accent: "var(--accent)",
+        text: "var(--text)",
       },
     },
   },

@@ -2,32 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  --backgroundPrimary: #fafafa;
+  --backgroundSecondary: #ebebeb;
+  --accent: #ff2e00;
+  --text: #1f2a3f;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+body.dark {
+  --backgroundPrimary: #192227;
+  --backgroundSecondary: #263238;
+  --accent: #0094c6;
+  --text: #eceff2;
+}
+
+/* Adding Font */
+@font-face {
+  font-family: "Lora"; /*Name in .tff file*/
+  src: url(./assets/font/Lora.ttf);
+}
+
+@font-face {
+  font-family: "LoraIttalic"; /*Name in .tff file*/
+  src: url(./assets/font/LoraIttalic.ttf);
+}
+
+@media (min-width: 1440px) {
+  .fixMargin {
+    margin-left: calc((100vw - 1440px) / 2);
+    margin-right: calc((100vw - 1440px) / 2);
   }
 }
